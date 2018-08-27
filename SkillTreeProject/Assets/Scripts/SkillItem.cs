@@ -109,15 +109,18 @@ public class SkillItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void SuccessStudy()
     {
-        SkillsTree tempParent = this.transform.parent.parent.parent.GetComponent<SkillsTree>();
-        bool isSuccess = tempParent.ConsumePoints(info.needPoints);
-        if (isSuccess)
+        if (info.learned == false)
         {
-            info.learned = true;
-            info.locked = false;
+            SkillsTree tempParent = this.transform.parent.parent.parent.GetComponent<SkillsTree>();
+            bool isSuccess = tempParent.ConsumePoints(info.needPoints);
+            if (isSuccess)
+            {
+                info.learned = true;
+                info.locked = false;
 
-            UpdateShow();
+                UpdateShow();
 
+            }
         }
     }
 

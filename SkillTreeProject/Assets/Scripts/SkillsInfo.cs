@@ -23,7 +23,7 @@ public class SkillsInfo : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         //加载场景的时候不能将这个销毁
         DontDestroyOnLoad(this.gameObject);
         InitSkillInfo();
